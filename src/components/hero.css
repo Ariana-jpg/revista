@@ -1,0 +1,28 @@
+.hero {
+  background: #007BFF;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.btn_hero {
+  background: white;
+  color: #007BFF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn_hero:hover {
+  background: #e6e6e6;
+}
