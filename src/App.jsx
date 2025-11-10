@@ -2,9 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-//importamos firebase
 import app from './firebase'
-//Autentication
 import { getAuth, signOut } from 'firebase/auth';
 
 import reactLogo from "./assets/react.svg";
@@ -20,6 +18,9 @@ import Caracteristicas from "./pages/caracteristicas";
 import Contacto from "./pages/contacto";
 import ListaPeliculas from "./components/peliculas";
 
+import Login from "./components/Login";
+import RegistrarCuenta from "./components/RegistrarCuenta";
+
 function App() {
   return (
     <>
@@ -31,7 +32,8 @@ function App() {
           <Route path="/caracteristicas" element={<Caracteristicas />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/peliculas" element={<ListaPeliculas />} />
-
+          <Route path="/iniciar-sesion" element={<Login/>} />
+          <Route path="/registrarse" element={<RegistrarCuenta/>} />
         </Routes>
 
         <Footer />

@@ -1,22 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-import './header.css'
+import NavbarVisitante from './navbarVisitante';
+import NavbarUsuario from './navbarUsuario';
+
 
 function Header() {
+    const [usuario, setUsuario] = useState(null);
+    const auth = getAuth();
+
     return (
-        <header>
-            <div className="container">
-                <h1 className="logo">Mi Pagina</h1>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Inicio</Link></li>
-                        <li><Link to="/caracteristicas">Características</Link></li>
-                        <li><Link to="/contacto">Contacto</Link></li>
-                        <li><Link to="/peliculas">Peliculas</Link></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <>
+            <NavbarVisitante />
+            <NavbarUsuario />
+        </>
     )
 }
 
