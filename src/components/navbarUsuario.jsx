@@ -1,16 +1,12 @@
 import { Link } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
-
 import './header.css'
-
 function NavbarUsuario() {
     const auth = getAuth();
-
     //funcion para cerrar sesion
     const cerrarSesion = async () => {
         await signOut(auth);
     }
-
     return (
         <header>
             <div className="container">
