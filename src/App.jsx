@@ -17,6 +17,8 @@ import Footer from "./components/footer";
 import Caracteristicas from "./pages/caracteristicas";
 import Contacto from "./pages/contacto";
 import ListaPeliculas from "./components/peliculas";
+import Comunidad from "./components/comunidad";
+import RutaPrivada from "./components/RutaPrivada";
 
 import Login from "./components/Login";
 import RegistrarCuenta from "./components/RegistrarCuenta";
@@ -34,6 +36,13 @@ function App() {
           <Route path="/peliculas" element={<ListaPeliculas />} />
           <Route path="/iniciar-sesion" element={<Login/>} />
           <Route path="/registrarse" element={<RegistrarCuenta/>} />
+          <Route path="/comunidad" element={
+            <>
+              <RutaPrivada>
+                <Comunidad/>
+              </RutaPrivada>
+            </>
+          } />
         </Routes>
 
         <Footer />

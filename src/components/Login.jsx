@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 const provider = new GoogleAuthProvider();
-
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
 
     function iniciarSesion (){
         const auth = getAuth();
@@ -14,6 +16,7 @@ function Login() {
             const user = userCredential.user;
             // ...
             console.log("inicio de sesion exitoso");
+            navigate("/");
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -32,6 +35,7 @@ function Login() {
             const user = result.user;
             // ...
             console.log("Iniciaste sesion con Google");
+            navigate("/");
             
         }).catch((error) => {
             const errorCode = error.code;

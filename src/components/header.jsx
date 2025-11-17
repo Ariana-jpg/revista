@@ -24,12 +24,11 @@ function Header() {
         return () => detectarUsuario();
     })
 
-    return (
-        <>
-            <NavbarVisitante />
-            <NavbarUsuario />
-        </>
-    )
+    if (usuario) {
+        return <NavbarUsuario />
+    }else{
+        return <NavbarVisitante />
+    }
 }
 
 export default Header;
