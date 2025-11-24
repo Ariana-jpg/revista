@@ -1,27 +1,12 @@
-header {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 1rem 0;
-}
-
 .logo {
-  font-size: 1.5rem;
-  color: #007BFF;
-  text-align: center;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
+  color: #007BFF;   /* azul */
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #333;      /* gris oscuro */
 }
 
 nav a:hover {
-  color: #007BFF;
+  color: #007BFF;   /* azul */
 }

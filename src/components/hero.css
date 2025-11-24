@@ -1,28 +1,122 @@
+/* Fondo rosado pastel más suave y menos alto */
 .hero {
-  background: #007BFF;
-  color: white;
-  text-align: center;
-  padding: 4rem 2rem;
+    background: linear-gradient(135deg, #ffe0ec, #ffd1e8);
+    color: #b3006b;
+    text-align: center;
+    padding: 2.8rem 1.5rem; /* 🔹 Mucho más pequeño */
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.3s ease-in-out;
+    border-radius: 0 0 25px 25px; /* toque cute */
 }
 
+/* Estrellitas decorativas */
+.hero::before,
+.hero::after {
+    content: '✨';
+    position: absolute;
+    font-size: 1.8rem; /* 🔹 Más pequeño */
+    opacity: 0.5;
+    animation: sparkle 3s infinite ease-in-out;
+}
+
+.hero::before {
+    top: 10px;
+    left: 15px;
+}
+
+.hero::after {
+    bottom: 10px;
+    right: 15px;
+}
+
+/* Títulos y texto más compactos */
 .hero h2 {
-  font-size: 2.5rem;
+    font-size: 2rem; /* 🔹 Antes 3rem */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.7rem;
+    animation: slideDown 1s ease-out;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin: 1rem 0;
+    font-size: 1.1rem; /* 🔹 Antes 1.4rem */
+    margin: 0.5rem 0 1.5rem;
+    animation: fadeInText 1.4s ease-in;
 }
 
+/* Botón más pequeño y cute */
 .btn_hero {
-  background: white;
-  color: #007BFF;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
+    background: #ff73b8;
+    color: white;
+    padding: 0.65rem 1.4rem; /* 🔹 Más pequeño */
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 3px 8px rgba(255, 105, 180, 0.4);
+    transition: all 0.25s ease;
+    display: inline-block;
+    animation: popUp 1.1s ease-out;
 }
 
 .btn_hero:hover {
-  background: #e6e6e6;
+    background: #ff91c8;
+    transform: scale(1.06);
+    box-shadow: 0 5px 12px rgba(255, 105, 180, 0.6);
+}
+
+/* Animaciones */
+@keyframes sparkle {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

@@ -1,53 +1,87 @@
 // npm install react-router-dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
-import app from './firebase'
-import { getAuth, signOut } from 'firebase/auth';
-
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// Firebase (ya inicializado en ./firebase)
 import "./App.css";
-import Header from "./components/header";
-import Hero from "./components/hero";
-import Contenido from "./components/contenido";
-import Footer from "./components/footer";
 
-// Mis paginas
-import Caracteristicas from "./pages/caracteristicas";
-import Contacto from "./pages/contacto";
-import ListaPeliculas from "./components/peliculas";
-import Comunidad from "./components/comunidad";
-import RutaPrivada from "./components/RutaPrivada";
+// Layout
+import Header from "./components/header.jsx";
+import Hero from "./components/hero.jsx";
+import Footer from "./components/footer.jsx";
 
-import Login from "./components/Login";
-import RegistrarCuenta from "./components/RegistrarCuenta";
+// Componentes principales
+import Contenido from "./components/contenido.jsx";
+import Contacto from "./pages/contacto.jsx";
+import Comunidad from "./components/comunidad.jsx";
+
+// Páginas protegidas
+import Ropa from "./components/ropa.jsx";
+import Maquillaje from "./components/maquillaje.jsx";
+import Skincare from "./components/skincare.jsx";
+
+// Sistema de login
+import Login from "./components/Login.jsx";
+import RegistrarCuenta from "./components/RegistrarCuenta.jsx";
+
+// Ruta privada
+import RutaPrivada from "./components/RutaPrivada.jsx";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Hero />
-        <Routes>
-          <Route path="/" element={<Contenido />} />
-          <Route path="/caracteristicas" element={<Caracteristicas />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/peliculas" element={<ListaPeliculas />} />
-          <Route path="/iniciar-sesion" element={<Login/>} />
-          <Route path="/registrarse" element={<RegistrarCuenta/>} />
-          <Route path="/comunidad" element={
-            <>
-              <RutaPrivada>
-                <Comunidad/>
-              </RutaPrivada>
-            </>
-          } />
-        </Routes>
+    <BrowserRouter>
+      <Header />
+      <Hero />
 
-        <Footer />
-      </BrowserRouter>
-    </>
+      <Routes>
+
+        {/* Página principal */}
+        <Route path="/" element={<Contenido />} />
+
+        {/* Contacto (pública) */}
+        <Route path="/contacto" element={<Contacto />} />
+
+        {/* 🔒 RUTAS PRIVADAS */}
+        <Route
+          path="/maquillaje"
+          element={
+            <RutaPrivada>
+              <Maquillaje />
+            </RutaPrivada>
+          }
+        />
+        <Route
+          path="/skincare"
+          element={
+            <RutaPrivada>
+              <Skincare />
+            </RutaPrivada>
+          }
+        />
+        <Route
+          path="/ropa"
+          element={
+            <RutaPrivada>
+              <Ropa />
+            </RutaPrivada>
+          }
+        />
+        <Route
+          path="/comunidad"
+          element={
+            <RutaPrivada>
+              <Comunidad />
+            </RutaPrivada>
+          }
+        />
+
+        {/* Login y registro */}
+        <Route path="/iniciar-sesion" element={<Login />} />
+        <Route path="/registrarse" element={<RegistrarCuenta />} />
+
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 

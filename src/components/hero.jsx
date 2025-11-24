@@ -1,16 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import './hero.css'
 
 function Hero() {
-    return(
+    return (
         <section className="hero" id="inicio">
             <div className="container">
-                <h2>Bienvenido a Mi Sitio</h2>
-                <p>Una solución simple para comenzar tu proyecto web.</p>
-                <Link to="/contacto" className="btn_hero">Cont&aacute;ctanos</Link>
+                <h2>
+                    Bienvenida a tu revista favorita, donde lo bonito inspira
+                </h2>
+                <p>
+                    ¿Quieres saber más, necesitas ayuda o deseas compartir algo
+                    con nosotras?
+                </p>
+                <Link to="/contacto" className="btn_hero">
+                    Cont&aacute;ctanos
+                </Link>
             </div>
         </section>
     )
 }
 
-export default Hero;
+export default Hero

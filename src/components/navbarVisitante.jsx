@@ -1,21 +1,54 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import './header.css'
-
-function NavbarVisitante() {
+function NavbarVisitantes() {
     return (
-        <header>
-            <div className="container">
-                <h1 className="logo">Mi Pagina</h1>
+        <header className="bg-pink-200 backdrop-blur-sm bg-opacity-80 shadow-lg sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                
+                {/* LOGO */}
+                <h1 className="text-3xl font-bold text-pink-700 tracking-wide font-sans">
+                    Mi Revista
+                </h1>
+
+                {/* MENÚ */}
                 <nav>
-                    <ul>
-                        <li><Link to="/">Inicio</Link></li>
-                        <li><Link to="/caracteristicas">Características</Link></li>
-                        <li><Link to="/contacto">Contacto</Link></li>
-                        <li><Link to="/peliculas">Peliculas</Link></li>
-                        <li><Link to="/comunidad">Comunidad</Link></li>
-                        <li><Link to="/iniciar-sesion">Iniciar Sesion</Link></li>
-                        <li><Link to="/registrarse">Registrarse</Link></li>
+                    <ul className="flex gap-6 text-lg font-medium text-pink-800 font-sans items-center">
+
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/">Inicio</Link>
+                        </li>
+
+                        {/* MAQUILLAJE (requiere registro) */}
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/iniciar-sesion">Maquillaje</Link>
+                        </li>
+
+                        {/* SKINCARE (requiere registro) */}
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/iniciar-sesion">Skincare</Link>
+                        </li>
+
+                        {/* ROPA (requiere registro) */}
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/iniciar-sesion">Ropa</Link>
+                        </li>
+
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/contacto">Contacto</Link>
+                        </li>
+
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/iniciar-sesion">Comunidad</Link>
+                        </li>
+
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/iniciar-sesion">Iniciar Sesión</Link>
+                        </li>
+
+                        <li className="hover:text-pink-600 transition transform hover:scale-110">
+                            <Link to="/registrarse">Registrarse</Link>
+                        </li>
+
                     </ul>
                 </nav>
             </div>
@@ -23,4 +56,4 @@ function NavbarVisitante() {
     )
 }
 
-export default NavbarVisitante;
+export default NavbarVisitantes

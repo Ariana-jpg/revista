@@ -1,19 +1,19 @@
-//Iniciar Firebase
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-//base de datos
-import { getFirestore } from "firebase/firestore";
-//autenticacion
-import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCAdFUPc_GHxCX-a8ecDRFFe_XRYH9-s0E",
-  authDomain: "chicas-tec-am.firebaseapp.com",
-  projectId: "chicas-tec-am",
-  storageBucket: "chicas-tec-am.firebasestorage.app",
-  messagingSenderId: "85027786061",
-  appId: "1:85027786061:web:7102a4ace730835c5cfb04"
+  apiKey: "AIzaSyAc_b73lE-_XBjw4CnHzKvopeKCid0AzJc",
+  authDomain: "revista-c59b8.firebaseapp.com",
+  projectId: "revista-c59b8",
+  storageBucket: "revista-c59b8.firebasestorage.app",
+  messagingSenderId: "275495484100",
+  appId: "1:275495484100:web:efe13b0153d361728b2791"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
